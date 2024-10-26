@@ -40,7 +40,6 @@ echo "<script>window.location.href='booking-history.php'</script>";
 
 	<!-- Main Stylesheets -->
 	<link rel="stylesheet" href="css/style.css"/>
-
 </head>
 <body>
 	<!-- Page Preloder -->
@@ -55,7 +54,7 @@ echo "<script>window.location.href='booking-history.php'</script>";
 	                                                                              
 	<!-- Page top Section -->
 	<section class="page-top-section set-bg" data-setbg="img/page-top-bg.jpg">
-<!-- 		<div class="container">
+		<!-- <div class="container">
 			<div class="row">
 				<div class="col-lg-7 m-auto text-white">
 					<h2>Trainers</h2>
@@ -67,47 +66,57 @@ echo "<script>window.location.href='booking-history.php'</script>";
 
 
 	<!-- Trainers Section -->
-	<section id="trainers">
-            <h2>Meet Our Trainers</h2>
+	<section class=" pricing-section spad" >
+		<div class="container">
+			<div class="section-title text-center">
+				<!-- <img src="img/icons/logo-icon.png" alt=""> -->
+            	<h2>MEET OUR TRAINERS</h2>
+			</div>
             <div class="trainer-grid">
                 <div class="trainer-card">
-                    <!-- Replace with actual image -->
                     <img src="img/trainer/trainer1.jpeg" alt="Trainer 1" class="trainer-image">
                     <h3>Jenny Talia</h3>
                     <p>Aerobic</p>
                 </div>
                 <div class="trainer-card">
-                    <!-- Replace with actual image -->
                     <img src="img/trainer/trainer2.jpeg" alt="Trainer 2" class="trainer-image">
                     <h3>Joanna C. McKuchi</h3>
                     <p>Yoga & Pilates</p>
                 </div>
                 <div class="trainer-card">
-                    <!-- Replace with actual image -->
                     <img src="img/trainer/trainer3.jpeg" alt="Trainer 3" class="trainer-image">
                     <h3>Rae Piste</h3>
                     <p>CrossFit</p>
                 </div>
+				<div class="trainer-card">
+                    <img src="img/trainer/trainer5.jpeg" alt="Trainer 3" class="trainer-image">
+                    <h3>Eileen Dover</h3>
+                    <p>Spin Cycle</p>
+                </div>
                 <div class="trainer-card">
-                    <!-- Replace with actual image -->
                     <img src="img/trainer/trainer4.jpeg" alt="Trainer 1" class="trainer-image">
                     <h3>Jack Kanoff</h3>
                     <p>Weight Training</p>
                 </div>
                 <div class="trainer-card">
-                    <!-- Replace with actual image -->
+
                     <img src="img/trainer/trainer6.jpeg" alt="Trainer 2" class="trainer-image">
                     <h3>Barry McKockiner</h3>
                     <p>Powerlifting</p>
                 </div>
                 <div class="trainer-card">
-                    <!-- Replace with actual image -->
                     <img src="img/trainer/trainer7.jpeg" alt="Trainer 3" class="trainer-image">
-                    <h3>Hue G. Rection  </h3>
+                    <h3>Hue G. Rection</h3>
                     <p>Nutritionist</p>
                 </div>
+				<div class="trainer-card">
+                    <img src="img/trainer/trainer8.jpeg" alt="Trainer 3" class="trainer-image">
+                    <h3>Kimmy Head</h3>
+                    <p>Calisthenics</p>
+                </div>
             </div>
-        </section>
+		</div>
+    </section>
 	
 
 	<!-- Footer Section -->
