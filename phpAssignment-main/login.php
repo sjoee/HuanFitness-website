@@ -62,14 +62,14 @@ if(isset($_POST['submit'])) {
 	                                                                              
 	<!-- Page top Section -->
 	<section class="page-top-section set-bg" data-setbg="img/page-top-bg.jpg">
-		<div class="container">
+<!-- 		<div class="container">
 			<div class="row">
 				<div class="col-lg-7 m-auto text-white">
 					<h2>Login</h2>
 					
 				</div>
 			</div>
-		</div>
+		</div> -->
 	</section>
 
 
