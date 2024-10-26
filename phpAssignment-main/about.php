@@ -55,7 +55,7 @@ echo "<script>window.location.href='booking-history.php'</script>";
 	                                                                              
 	<!-- Page top Section -->
 	<section class="page-top-section set-bg" data-setbg="img/page-top-bg.jpg">
-<!-- 		<div class="container">
+		<!-- <div class="container">
 			<div class="row">
 				<div class="col-lg-7 m-auto text-white">
 					<h2>About Us</h2>
@@ -70,12 +70,12 @@ echo "<script>window.location.href='booking-history.php'</script>";
 	<section class="pricing-section spad">
 		<div class="container">
 			<div class="section-title text-center">
-				<img src="img/icons/logo-icon.png" alt="">
+				<!-- <img src="img/icons/logo-icon.png" alt=""> -->
 				<h2>About Us</h2>
 			</div>
 			<div class="row">
 				<div class="col-lg-12 col-sm-6">
-					<p>Hola amigos! We are a bunch of curious and intellectual professionals who out of boredom from the monotonous routine, established Brand Beavers in Mumbai to emerge as problem solvers. Our team of entrepreneurs, thinkers, strategists, designers, and technologists will help you to emerge as an effective and disruptive brand all over the globe. Our brainstorming and amicable individuals go beyond their comfort zone to satisfy the customer’s requirements.</p>
+					<p>HuanFitnessPal is dedicated to helping you achieve your fitness goals. Our state-of-the-art facilities and expert trainers are here to guide you every step of the way.</p>
 				</div>
 			</div>
 		</div>
