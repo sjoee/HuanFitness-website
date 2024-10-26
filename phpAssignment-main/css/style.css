@@ -47,6 +47,14 @@ h6 {
 	font-size: 16px;
 }
 
+h2 i{
+	color:#fff;
+	font-size: 36px;
+	font-weight: 900;
+	font-family:"Arial", sans-serif;
+	font-style: bold;
+}
+
 p {
 	font-size: 15px;
 	color: #222;
@@ -492,10 +500,15 @@ only screen and (min-width: 576px) and (max-width: 767px),
 	color: #fff;
 }
 
-.main-menu li>a.active {
+/* .main-menu :hover{
 	border-bottom: 2px solid #fff;
-}
+} */
 
+/* .main-menu li>a.active {
+	border-bottom: 2px solid #fff;
+} */
+ 
+/* admin sidebar */
 .main-menu li:hover .sub-menu {
 	visibility: visible;
 	opacity: 1;
@@ -652,11 +665,11 @@ only screen and (min-width: 576px) and (max-width: 767px),
 /*------------------
 Trainer Section Styles
 ---------------------*/
-#trainers {
+/* #trainers {
     padding: 4rem 2rem;
     max-width: 1300px;
     margin: 0 auto;
-}
+} */
 
 #trainers h2 {
     text-align: center;
@@ -2111,6 +2124,20 @@ only screen and (min-width: 576px) and (max-width: 767px),
 	box-shadow: 0px 12px 32px rgba(72, 105, 114, 0.15);
 }
 
+.trainer-card {
+    background: #f5f5f5; /* Light gray background */
+    padding: 1.5rem;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.trainer-card:hover {
+    transform: translateY(-5px);
+    background: #e0e0e0; /* Slightly darker on hover */
+}
+
 .trainers-page-section .trainer-item {
 	margin-bottom: 90px;
 }
@@ -2782,7 +2809,7 @@ only screen and (min-width: 576px) and (max-width: 767px),
 .page-top-section {
 	height: 100px;
 	position: relative;
-/* 	padding-top: 200px; */
+	/* padding-top: 200px; */
 	text-align: center;
 }
 
