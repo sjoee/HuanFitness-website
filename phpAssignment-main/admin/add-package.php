@@ -114,7 +114,7 @@ echo "<script>window.location.href='add-package.php'</script>";
               <table class="table table-hover table-bordered" id="sampleTable">
                 <thead>
                   <tr>
-                    <th>Sr.No</th>
+                    <th>No.</th>
                      <th>Category </th>
                     <th>Package</th>
                     <th>Action</th>
