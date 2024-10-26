@@ -1,7 +1,3 @@
-
-
-
-
 <?php 
 session_start();
 error_reporting(0);
@@ -59,7 +55,7 @@ echo "<script>window.location.href='booking-history.php'</script>";
 	                                                                              
 	<!-- Page top Section -->
 	<section class="page-top-section set-bg" data-setbg="img/page-top-bg.jpg">
-<!-- 		<div class="container">
+		<!-- <div class="container">
 			<div class="row">
 				<div class="col-lg-7 m-auto text-white">
 					<h2>Pricing</h2>
@@ -74,23 +70,22 @@ echo "<script>window.location.href='booking-history.php'</script>";
 <section class="pricing-section spad">
 		<div class="container">
 			<div class="section-title text-center">
-				<img src="img/icons/logo-icon.png" alt="">
+				<!-- <img src="img/icons/logo-icon.png" alt=""> -->
 				<h2>Pricing plans</h2>
 				<p>Practice Yoga to perfect physical beauty, take care of your soul and enjoy life more fully!</p>
 			</div>
 			<div class="row">
 				        <?php 
-
-$sql ="SELECT id, category, titlename, PackageType, PackageDuratiobn, Price, uploadphoto, Description, create_date from tbladdpackage";
-$query= $dbh -> prepare($sql);
-$query-> execute();
-$results = $query -> fetchAll(PDO::FETCH_OBJ);
-$cnt=1;
-if($query -> rowCount() > 0)
-{
-foreach($results as $result)
-{
-?>
+							$sql ="SELECT id, category, titlename, PackageType, PackageDuratiobn, Price, uploadphoto, Description, create_date from tbladdpackage";
+							$query= $dbh -> prepare($sql);
+							$query-> execute();
+							$results = $query -> fetchAll(PDO::FETCH_OBJ);
+							$cnt=1;
+							if($query -> rowCount() > 0)
+							{
+							foreach($results as $result)
+							{
+						?>
 				<div class="col-lg-3 col-sm-6">
 					<div class="pricing-item begginer">
 						<div class="pi-top">
