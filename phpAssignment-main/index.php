@@ -53,7 +53,7 @@ echo "<script>window.location.href='booking-history.php'</script>";
 	
 	<!-- Page top Section -->
 	<section class="page-top-section set-bg" data-setbg="img/page-top-bg.jpg">
-<!-- 		<div class="container">
+		<!-- <div class="container">
 			<div class="row">
 				<div class="col-lg-7 m-auto text-white">
 					<h2>Home</h2>
@@ -61,6 +61,22 @@ echo "<script>window.location.href='booking-history.php'</script>";
 				</div>
 			</div>
 		</div> -->
+	</section>
+
+
+	<!-- Pricing Section -->
+	<section class="pricing-section spad">
+		<div class="container">
+			<div class="section-title text-center">
+				<!-- <img src="img/icons/logo-icon.png" alt=""> -->
+				<h2>Home</h2>
+			</div>
+			<div class="row">
+				<div class="col-lg-12 col-sm-6">
+				<p>bringing you to a healthier life for your beautiful future</p>
+				</div>
+			</div>
+		</div>
 	</section>
 
 	
