@@ -56,6 +56,7 @@ echo "<script>window.location.href='add-category.php'</script>";
     <div class="app-sidebar__overlay" data-toggle="sidebar"></div>
     <?php include 'include/sidebar.php'; ?>
     <main class="app-content">
+
      <h3>Categories</h3>
      <hr />
       <div class="row">
@@ -80,7 +81,7 @@ echo "<script>window.location.href='add-category.php'</script>";
               <form  method="post">
                 <div class="form-group col-md-12">
                   <label class="control-label">Add Category</label>
-                  <input class="form-control" name="category" id="category" type="text" placeholder="Enter Add Category">
+                  <input class="form-control" name="category" id="category" type="text" placeholder="Enter Category">
                 </div>
                 <div class="form-group col-md-4 align-self-end">
                 
@@ -99,7 +100,7 @@ echo "<script>window.location.href='add-category.php'</script>";
               <table class="table table-hover table-bordered" id="sampleTable">
                 <thead>
                   <tr>
-                    <th>Sr.No</th>
+                    <th>No.</th>
                     <th>Name</th>
                     <th>Action</th>
                     
