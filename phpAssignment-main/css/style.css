@@ -153,6 +153,7 @@ ol {
 	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#fdb07d", endColorstr="#f65d5d", GradientType=1);
 }
 
+
 /*---------------------
   Commom elements
 -----------------------*/
@@ -2779,15 +2780,15 @@ only screen and (min-width: 576px) and (max-width: 767px),
 ==================*/
 
 .page-top-section {
-	height: 478px;
+	height: 200px;
 	position: relative;
-	padding-top: 220px;
+	padding-top: 200px;
 	text-align: center;
 }
 
-.page-top-section.page-sp {
+/* .page-top-section.page-sp {
 	padding-top: 200px;
-}
+} */
 
 .page-top-section:after {
 	position: absolute;
@@ -2800,7 +2801,7 @@ only screen and (min-width: 576px) and (max-width: 767px),
 	filter: alpha(opacity=92);
 }
 
-.page-top-section .container {
+/* .page-top-section .container {
 	position: relative;
 	z-index: 9;
 }
@@ -2813,7 +2814,7 @@ only screen and (min-width: 576px) and (max-width: 767px),
 
 .page-top-section p {
 	font-size: 18px;
-}
+} */
 
 /*--------------
   About Page
