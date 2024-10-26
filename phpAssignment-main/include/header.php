@@ -1,12 +1,12 @@
 	<header class="header-section">
 		<div class="header-bottom">
 			<a href="index.php" class="site-logo" style="color:#fff; font-weight:bold; font-size:26px;">
-				HUANFITNESS PAL<br/>
+			<h2><i>HUANFITNESS PAL</i></h2><br/>
 			</a>
 			
 			<div class="container">
 				<ul class="main-menu">
-					<li><a href="index.php" class="active">Home</a></li>
+					<li><a href="index.php">Home</a></li>
 					<li><a href="about.php">About</a></li>
 					<li><a href="pricing.php">Pricing</a></li>
 					<li><a href="trainers.php">Trainers</a></li>
