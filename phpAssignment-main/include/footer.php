@@ -6,7 +6,8 @@
 					
 					<div class="col-md-8 text-md-right">
 						<div class="copyright"> 
-GYM Managaement System</div>
+							Copyright &#169; 2024 by HuanFitness Pal. All Rights Reserved.
+						</div>
 					</div>
 				</div>
 			</div>
