@@ -53,7 +53,7 @@ echo "<script>window.location.href='booking-history.php'</script>";
 
 	                                                                              
 	<!-- Page top Section -->
-	<section class="page-top-section set-bg" data-setbg="img/page-top-bg.jpg">
+	<section class="page-top-section set-bg">
 		<!-- <div class="container">
 			<div class="row">
 				<div class="col-lg-7 m-auto text-white">
@@ -101,7 +101,7 @@ echo "<script>window.location.href='booking-history.php'</script>";
                 <div class="trainer-card">
 
                     <img src="img/trainer/trainer6.jpeg" alt="Trainer 2" class="trainer-image">
-                    <h3>Barry McKockiner</h3>
+                    <h3>Rahmit Inmah Asol</h3>
                     <p>Powerlifting</p>
                 </div>
                 <div class="trainer-card">
@@ -111,7 +111,7 @@ echo "<script>window.location.href='booking-history.php'</script>";
                 </div>
 				<div class="trainer-card">
                     <img src="img/trainer/trainer8.jpeg" alt="Trainer 3" class="trainer-image">
-                    <h3>Kimmy Head</h3>
+                    <h3>Barry McKockiner</h3>
                     <p>Calisthenics</p>
                 </div>
             </div>
