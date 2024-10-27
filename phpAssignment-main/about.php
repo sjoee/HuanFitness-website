@@ -41,6 +41,10 @@ echo "<script>window.location.href='booking-history.php'</script>";
 	<!-- Main Stylesheets -->
 	<link rel="stylesheet" href="css/style.css"/>
 
+	<style>
+
+
+	</style>
 </head>
 <body>
 	<!-- Page Preloder -->
@@ -54,7 +58,7 @@ echo "<script>window.location.href='booking-history.php'</script>";
 
 	                                                                              
 	<!-- Page top Section -->
-	<section class="page-top-section set-bg" data-setbg="img/page-top-bg.jpg">
+	<section class="page-top-section set-bg">
 		<!-- <div class="container">
 			<div class="row">
 				<div class="col-lg-7 m-auto text-white">
@@ -77,7 +81,52 @@ echo "<script>window.location.href='booking-history.php'</script>";
 				<div class="col-lg-12 col-sm-6">
 					<p>HuanFitnessPal is dedicated to helping you achieve your fitness goals. Our state-of-the-art facilities and expert trainers are here to guide you every step of the way.</p>
 				</div>
+			</div><br><br>
+			<!-- q&a -->
+			 <!-- Q&A Section -->
+			<section class="qa-section">
+			<div class="qa-container">
+				<h1 class="title">Frequently Asked Questions</h1>
+				
+				<div class="qa-item">
+					<div class="question">
+						What services do you offer?
+					</div>
+					<div class="answer">
+						We offer a comprehensive range of services including aerobics, yoga & pilates, crossfit, spin cycle, weight training, powerlifting, calisthenics, and also nutrition screening. Our team specializes in 
+						creating custom solutions tailored to your specific health needs.
+					</div>
+				</div>
+
+				<div class="qa-item">
+					<div class="question">
+						How can I get started?
+					</div>
+					<div class="answer">
+						Getting started is easy! Simply start by registering as a new member under login, then choose you prefered package to start! We'll guide 
+						you through the entire process step by step.
+					</div>
+				</div>
+
+				<div class="qa-item">
+					<div class="question">
+						What are your working hours?
+					</div>
+					<div class="answer">
+						We operate 7 days a week, 5 AM to 11 PM including public holidays. Support is available 24/7 for urgent matters through our emergency contact system.
+					</div>
+				</div>
+
+				<div class="qa-item">
+					<div class="question">
+						How do I get in touch with a nutritionist?
+					</div>
+					<div class="answer">
+						Applications for consultation are open under request for nutritionist.
+					</div>
+				</div>
 			</div>
+			</section>
 		</div>
 	</section>
 	
