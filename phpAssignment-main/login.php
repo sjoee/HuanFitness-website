@@ -61,7 +61,7 @@ if(isset($_POST['submit'])) {
 
 	                                                                              
 	<!-- Page top Section -->
-	<section class="page-top-section set-bg" data-setbg="img/page-top-bg.jpg">
+	<section class="page-top-section set-bg">
 		<!-- <div class="container">
 			<div class="row">
 				<div class="col-lg-7 m-auto text-white">
@@ -98,10 +98,10 @@ if(isset($_POST['submit'])) {
 						<div class="row">
 							<div class="col-md-12">
 								<input type="text" name="email" id="email" placeholder="Your Email" autocomplete="off" required>
-							</div>
+							</div><br><br>
 							<div class="col-md-12">
 								<input type="password" name="password" id="password" placeholder="Password" autocomplete="off" required>
-							</div>
+							</div><br><br><br><br>
 							
 							
 						</div>
