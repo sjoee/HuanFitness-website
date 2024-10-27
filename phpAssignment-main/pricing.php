@@ -54,7 +54,7 @@ echo "<script>window.location.href='booking-history.php'</script>";
 
 	                                                                              
 	<!-- Page top Section -->
-	<section class="page-top-section set-bg" data-setbg="img/page-top-bg.jpg">
+	<section class="page-top-section set-bg">
 		<!-- <div class="container">
 			<div class="row">
 				<div class="col-lg-7 m-auto text-white">
@@ -72,7 +72,7 @@ echo "<script>window.location.href='booking-history.php'</script>";
 			<div class="section-title text-center">
 				<!-- <img src="img/icons/logo-icon.png" alt=""> -->
 				<h2>Pricing plans</h2>
-				<p>Practice Yoga to perfect physical beauty, take care of your soul and enjoy life more fully!</p>
+				<p>Take a look at our selections of packages available!</p>
 			</div>
 			<div class="row">
 				        <?php 
