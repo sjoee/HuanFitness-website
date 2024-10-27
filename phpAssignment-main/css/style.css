@@ -703,6 +703,7 @@ Trainer Section Styles
 
 .trainer-card:hover {
     transform: translateY(-5px);
+	background: #e0e0e0; 
 }
 
 .trainer-image {
