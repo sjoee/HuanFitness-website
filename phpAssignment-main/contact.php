@@ -41,6 +41,29 @@ echo "<script>window.location.href='booking-history.php'</script>";
 	<!-- Main Stylesheets -->
 	<link rel="stylesheet" href="css/style.css"/>
 
+	<style>
+		/* Google Maps container styling */
+		.google-map {
+			width: 90%;  /* Adjust width as needed */
+			max-width: 900px;  /* Maximum width for larger screens */
+			height: 60vh;  /* Adjust height for laptop screen */
+			margin: 0 auto;  /* Center horizontally */
+			position: relative;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
+
+		/* Google Maps iframe styling */
+		.google-map iframe {
+			width: 100%;
+			height: 100%;
+			position: absolute;
+			left: 0;
+			top: 0;
+			border: 0; /* Remove border for a cleaner look */
+		}
+	</style>
 </head>
 <body>
 	<!-- Page Preloder -->
@@ -54,7 +77,7 @@ echo "<script>window.location.href='booking-history.php'</script>";
 
 	                                                                              
 	<!-- Page top Section -->
-	<section class="page-top-section set-bg" data-setbg="img/page-top-bg.jpg">
+	<section class="page-top-section set-bg">
 		<!-- <div class="container">
 			<div class="row">
 				<div class="col-lg-7 m-auto text-white">
@@ -75,15 +98,21 @@ echo "<script>window.location.href='booking-history.php'</script>";
 			</div>
 			<div class="row">
 				<div class="col-lg-12 col-sm-6">
-					<p><strong>Email:</strong> info@yourdomain.com</p>
-					<p><strong>Contact No:</strong> 1234567890, 1122334455</p>
-					<p><strong>Address:</strong> Test Address</p>
+					<p><strong>Email : </strong> huanfitnesspal@gmail.com</p>
+					<p><strong>Contact No : </strong> +60 18-335 9302</p>
+					<p><strong>Opening Hours : </strong> Opened Daily from 0500 to 2300<br></p>
+					<p><strong>Address : </strong> HuanFitness Centre, Persiaran Kewajipan, USJ 8, 47600 Subang Jaya, Selangor</p>
 				</div>
-			</div>
+			</div><br>
+		</div><br>
+		<div class="google-map">
+			<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3984.1460721647964!2d101.5918573!3d3.0555553!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31cc4ce986444105%3A0xe53f7dd9557013bc!2sPersiaran%20Kewajipan%2C%20Selangor!5e0!3m2!1sen!2smy!4v1730007277441!5m2!1sen!2smy" 
+				width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
 		</div>
 	</section>
 	
 
+	
 	<!-- Footer Section -->
 	<?php include 'include/footer.php'; ?>
 	<!-- Footer Section end -->
