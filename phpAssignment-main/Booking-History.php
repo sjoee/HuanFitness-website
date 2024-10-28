@@ -186,6 +186,9 @@ $uid=$_SESSION['uid'];
   </body>
 </html>
  <style>
+  body {
+        background-color: rgba(249, 242, 240, 0.87);
+    }
 .errorWrap {
     padding: 10px;
     margin: 0 0 20px 0;
@@ -204,3 +207,4 @@ $uid=$_SESSION['uid'];
 }
         </style>
         <?php } ?>
+
