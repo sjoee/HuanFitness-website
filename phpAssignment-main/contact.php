@@ -66,9 +66,9 @@ if(isset($_POST['submit_user_form'])) {
     <style>
         /* Google Maps container styling */
         .google-map {
-            width: 90%;  /* Adjust width as needed */
-            max-width: 900px;  /* Maximum width for larger screens */
-            height: 60vh;  /* Adjust height for laptop screen */
+            width: 90%; 
+            max-width: 900px; 
+            height: 60vh;  
             margin: 0 auto;  /* Center horizontally */
             position: relative;
             display: flex;
@@ -83,7 +83,7 @@ if(isset($_POST['submit_user_form'])) {
             position: absolute;
             left: 0;
             top: 0;
-            border: 0; /* Remove border for a cleaner look */
+            border: 0; 
         }
     </style>
 </head>
@@ -148,26 +148,11 @@ if(isset($_POST['submit_user_form'])) {
     </form>
 <?php endif; ?>
 
-    
-
-                                                                                  
-    <!-- Page top Section -->
-    <section class="page-top-section set-bg">
-        <!-- <div class="container">
-            <div class="row">
-                <div class="col-lg-7 m-auto text-white">
-                    <h2>Contact US</h2>
-                </div>
-            </div>
-        </div> -->
-    </section>
-
 
     <!-- Pricing Section -->
     <section class="pricing-section spad">
         <div class="container">
             <div class="section-title text-center">
-                <!-- <img src="img/icons/logo-icon.png" alt=""> -->
                 <h2>About Us</h2>
             </div>
             <div class="row">
