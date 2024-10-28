@@ -109,15 +109,7 @@ $error ="Registration Not successfully";
 	<!-- Header Section end -->
 	                                                                              
 	<!-- Page top Section -->
-	<section class="page-top-section set-bg" data-setbg="img/page-top-bg.jpg">
-<!-- 		<div class="container">
-			<div class="row">
-				<div class="col-lg-7 m-auto text-white">
-					<h2>Registration</h2>
-				</div>
-			</div>
-		</div> -->
-	</section>
+	<section class="page-top-section set-bg" data-setbg="img/page-top-bg.jpg"></section>
 	<!-- Page top Section end -->
 
 	<!-- Contact Section -->
