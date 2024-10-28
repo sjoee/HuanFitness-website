@@ -13,8 +13,6 @@ $uid=$_SESSION['uid'];
 <head>
 	<title>User | Booking History</title>
 	<meta charset="UTF-8">
-	<meta name="description" content="Ahana Yoga HTML Template">
-	<meta name="keywords" content="yoga, html">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<!-- Stylesheets -->
 	<link rel="stylesheet" href="css/bootstrap.min.css"/>
@@ -36,39 +34,29 @@ $uid=$_SESSION['uid'];
 	<!-- Header Section end -->
 	                                                                              
 	<!-- Page top Section -->
-	<section class="page-top-section set-bg" data-setbg="img/page-top-bg.jpg">
-<!-- 		<div class="container">
-			<div class="row">
-				<div class="col-lg-7 m-auto text-white">
-					<h2>Booking History</h2>
-					
-				</div>
-			</div>
-		</div> -->
-	</section>
+	<section class="page-top-section set-bg"></section>
 	<!-- Page top Section end -->
 
 	<!-- Contact Section -->
 	<section class="contact-page-section spad overflow-hidden">
-		<div class="container">
-			
-			<div class="row">
-				
+		<div class="container text-center">
+      <h2>BOOKING DETAILS</h2><br><br><br>			
+			<div class="row">				
 				<div class="col-lg-12">
-					   <table class="table table-hover table-bordered">
+					   <table class="table table-bordered">
                 <thead>
                    <?php $bookindid=$_GET['bookingid'];
                   $sql="SELECT t1.id as bookingid,t3.fname as Name, t3.email as email,t1.booking_date as bookingdate,t2.titlename as title,t2.PackageDuratiobn as PackageDuratiobn,
-t2.Price as Price,t2.Description as Description,t4.category_name as category_name,t5.PackageName as PackageName,payment,paymentType FROM tblbooking as t1
- join tbladdpackage as t2
-on t1.package_id =t2.id
-join tbluser as t3
-on t1.userid=t3.id
-join tblcategory as t4
-on t2.category=t4.id
-join tblpackage as t5
-on t2.PackageType=t5.id
- where t1.id=:bookindid";
+                      t2.Price as Price,t2.Description as Description,t4.category_name as category_name,t5.PackageName as PackageName,payment,paymentType FROM tblbooking as t1
+                      join tbladdpackage as t2
+                      on t1.package_id =t2.id
+                      join tbluser as t3
+                      on t1.userid=t3.id
+                      join tblcategory as t4
+                      on t2.category=t4.id
+                      join tblpackage as t5
+                      on t2.PackageType=t5.id
+                      where t1.id=:bookindid";
                   $query= $dbh->prepare($sql);
                   $query->bindParam(':bookindid',$bookindid, PDO::PARAM_STR);
                   $query-> execute();
@@ -206,5 +194,5 @@ $gpayment+=$tpayment;
     -webkit-box-shadow: 0 1px 1px 0 rgba(0,0,0,.1);
     box-shadow: 0 1px 1px 0 rgba(0,0,0,.1);
 }
-        </style>
-        <?php } ?>
+</style>
+<?php } ?>
