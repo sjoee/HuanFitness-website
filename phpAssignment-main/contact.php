@@ -133,7 +133,7 @@ if(isset($_POST['submit_user_form'])) {
 			<form method="POST" action="">
 				<section class="user-form-section spad">
 					<div class="container">
-						<h2>Request Meeting With Nutritionist <b>(RM20)</b></h2>
+						<h2>Request Meeting With Nutritionist <b>(RM20)</b></h2><br><br>
 						<div class="form-group">
 							<label for="name">Name</label>
 							<input type="text" id="name" name="name" class="form-control" required>
