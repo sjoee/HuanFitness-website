@@ -124,7 +124,7 @@ if(isset($_POST['submit_user_form'])) {
 		<!-- If user is not logged in, show a Book Now button that redirects to login -->
 		<section class="user-form-section spad">
 			<div class="container">
-				<h2>Request Meeting With Nutritionist <b>(RM20)</b></h2>
+				<h2>Request Meeting With Nutritionist <b>(RM20)</b></h2><br><br>
 				<p>Please <a href="login.php" class="site-btn sb-line-gradient">Log in</a> to book a meeting with our nutritionist.</p>
 			</div>
 		</section><br>
