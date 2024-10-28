@@ -26,7 +26,6 @@ echo "<script>window.location.href='booking-history.php'</script>";
 <head>
 	<title>Gym Management System</title>
 	<meta charset="UTF-8">
-	<meta name="description" content="Ahana Yoga HTML Template">
 	<meta name="keywords" content="yoga, html">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<!-- Stylesheets -->
@@ -53,15 +52,7 @@ echo "<script>window.location.href='booking-history.php'</script>";
 
 	                                                                              
 	<!-- Page top Section -->
-	<section class="page-top-section set-bg">
-		<!-- <div class="container">
-			<div class="row">
-				<div class="col-lg-7 m-auto text-white">
-					<h2>Trainers</h2>
-				</div>
-			</div>
-		</div> -->
-	</section>
+	<section class="page-top-section set-bg"></section>
 
 
 
@@ -69,7 +60,6 @@ echo "<script>window.location.href='booking-history.php'</script>";
 	<section class=" pricing-section spad" >
 		<div class="container">
 			<div class="section-title text-center">
-				<!-- <img src="img/icons/logo-icon.png" alt=""> -->
             	<h2>MEET OUR TRAINERS</h2>
 			</div>
             <div class="trainer-grid">
