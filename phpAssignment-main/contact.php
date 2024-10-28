@@ -106,12 +106,34 @@ if(isset($_POST['submit_user_form'])) {
         </div>
     </section>
 
+    <!-- Pricing Section -->
+    <section class="pricing-section spad">
+        <div class="container">
+            <div class="section-title text-center">
+                <!-- <img src="img/icons/logo-icon.png" alt=""> -->
+                <h2>About Us</h2>
+            </div>
+            <div class="row">
+                <div class="col-lg-12 col-sm-6">
+                    <p><strong>Email : </strong> huanfitnesspal@gmail.com</p>
+                    <p><strong>Contact No : </strong> +60 18-335 9302</p>
+                    <p><strong>Opening Hours : </strong> Opened Daily from 0500 to 2300<br></p>
+                    <p><strong>Address : </strong> HuanFitness Centre, Persiaran Kewajipan, USJ 8, 47600 Subang Jaya, Selangor</p>
+                </div>
+            </div><br>
+        </div><br>
+        <div class="google-map">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3984.1460721647964!2d101.5918573!3d3.0555553!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31cc4ce986444105%3A0xe53f7dd9557013bc!2sPersiaran%20Kewajipan%2C%20Selangor!5e0!3m2!1sen!2smy!4v1730007277441!5m2!1sen!2smy" 
+                width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+    </section>
+
     <!--Meet Nutritionist Form-->
 <?php if(strlen($_SESSION['uid'])==0): ?>
     <!-- If user is not logged in, show a Book Now button that redirects to login -->
     <section class="user-form-section spad">
         <div class="container">
-            <h2>Request Meeting With Nutritionist <b>(RM20)</b></h2>
+            <h2>Request Meeting With Nutritionist <b>(RM200)</b></h2>
             <p>Please <a href="login.php" class="site-btn sb-line-gradient">Log in</a> to book a meeting with our nutritionist.</p>
         </div>
     </section>
@@ -147,43 +169,6 @@ if(isset($_POST['submit_user_form'])) {
         </section>
     </form>
 <?php endif; ?>
-
-    
-
-                                                                                  
-    <!-- Page top Section -->
-    <section class="page-top-section set-bg">
-        <!-- <div class="container">
-            <div class="row">
-                <div class="col-lg-7 m-auto text-white">
-                    <h2>Contact US</h2>
-                </div>
-            </div>
-        </div> -->
-    </section>
-
-
-    <!-- Pricing Section -->
-    <section class="pricing-section spad">
-        <div class="container">
-            <div class="section-title text-center">
-                <!-- <img src="img/icons/logo-icon.png" alt=""> -->
-                <h2>About Us</h2>
-            </div>
-            <div class="row">
-                <div class="col-lg-12 col-sm-6">
-                    <p><strong>Email : </strong> huanfitnesspal@gmail.com</p>
-                    <p><strong>Contact No : </strong> +60 18-335 9302</p>
-                    <p><strong>Opening Hours : </strong> Opened Daily from 0500 to 2300<br></p>
-                    <p><strong>Address : </strong> HuanFitness Centre, Persiaran Kewajipan, USJ 8, 47600 Subang Jaya, Selangor</p>
-                </div>
-            </div><br>
-        </div><br>
-        <div class="google-map">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3984.1460721647964!2d101.5918573!3d3.0555553!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31cc4ce986444105%3A0xe53f7dd9557013bc!2sPersiaran%20Kewajipan%2C%20Selangor!5e0!3m2!1sen!2smy!4v1730007277441!5m2!1sen!2smy" 
-                width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-        </div>
-    </section>
     
 
     
@@ -206,4 +191,10 @@ if(isset($_POST['submit_user_form'])) {
     <script src="js/main.js"></script>
 
     </body>
+
+    <style>
+    body {
+        background-color: rgba(249, 242, 240, 0.87); /* Light beige color with slight transparency */
+    }
+</style>
 </html>
