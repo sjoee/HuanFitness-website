@@ -1,31 +1,9 @@
--- phpMyAdmin SQL Dump
--- version 5.1.1
--- https://www.phpmyadmin.net/
---
--- Host: 127.0.0.1
--- Generation Time: May 22, 2022 at 05:29 AM
--- Server version: 10.4.22-MariaDB
--- PHP Version: 7.4.27
-
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
 SET time_zone = "+00:00";
 
-
-/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
-/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
-/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8mb4 */;
-
---
 -- Database: `gymdb`
---
 
--- --------------------------------------------------------
-
---
--- Table structure for table `tbladdpackage`
---
 
 CREATE TABLE `tbladdpackage` (
   `id` int(11) NOT NULL,
@@ -46,7 +24,7 @@ CREATE TABLE `tbladdpackage` (
 INSERT INTO `tbladdpackage` (`id`, `category`, `titlename`, `PackageType`, `PackageDuratiobn`, `Price`, `uploadphoto`, `Description`, `create_date`) VALUES
 (1, '1', 'Free Fitness Gear Package', '1', '3 Month', '600', NULL, 'Free Fitness Gear\nComplimentary OnePass', '2022-03-05 02:55:34'),
 (2, '1', '3 Months Membership Package', '1', '6 Month', '800', NULL, 'Book Six Days Different Trainers Class designed for fast Weight Loss / Weight Gain with combination of Latest Workouts in addition to complimentary access to gym area with personal training.', '2022-03-05 02:56:44'),
-(3, '1', 'hgfhfgdfgdf', '1', '4 Month', '12000', NULL, 'hfdgfhfgh<div><br></div><div>fdgdfg</div>', '2022-05-22 02:34:08');
+(3, '1', 'Nutritionist Counseling', '2', 'Monthly', '10', NULL, 'Hire a personal nutrtitionist<div><br></div><div>Receive feedback on diet and possible exercises</div>', );
 
 -- --------------------------------------------------------
 
@@ -133,7 +111,7 @@ CREATE TABLE `tblpackage` (
 --
 
 INSERT INTO `tblpackage` (`id`, `cate_id`, `PackageName`) VALUES
-(1, '1', 'fdgdfg'),
+(1, '1', 'Package1'),
 (3, '2', 'Package2');
 
 -- --------------------------------------------------------
@@ -155,12 +133,21 @@ CREATE TABLE `tblpayment` (
 --
 
 INSERT INTO `tblpayment` (`id`, `bookingID`, `paymentType`, `payment`, `payment_date`) VALUES
+(1, '8', 'Partial Payment', '350', '2022-06-09 08:15:25'),
 (1, '1', 'Partial Payment', '300', '2022-03-05 03:54:10'),
+(2, '5', 'Full Payment', '500', '2022-06-09 10:45:30'),
+(3, '6', 'Partial Payment', '300', '2022-06-10 11:25:55'),
+(4, '8', 'Full Payment', '450', '2022-06-10 14:35:00'),
 (4, '1', 'Full Payment', '500', '2022-05-22 01:01:58'),
+(5, '9', 'Partial Payment', '250', '2022-06-11 16:15:45'),
 (5, '3', 'Partial Payment', '300', '2022-05-22 01:09:53'),
+(6, '10', 'Full Payment', '550', '2022-06-11 18:25:30'),
+(7, '6', 'Partial Payment', '200', '2022-06-12 09:05:15'),
 (8, '3', 'Full Payment', '500', '2022-05-22 01:19:03'),
 (9, '7', 'Partial Payment', '500', '2022-05-22 02:40:34'),
+(10, '7', 'Full Payment', '400', '2022-06-12 12:15:40'),
 (10, '7', 'Full Payment', '300', '2022-05-22 02:41:14');
+
 
 -- --------------------------------------------------------
 
@@ -186,12 +173,111 @@ CREATE TABLE `tbluser` (
 --
 
 INSERT INTO `tbluser` (`id`, `fname`, `lname`, `email`, `mobile`, `password`, `state`, `city`, `address`, `create_date`) VALUES
-(1, 'atul', 'kumar', 'atul@gmail.com', '8888888888', 'f925916e2754e5e03f75dd58a5733251', 'Uttar Pradesh', 'niuda', 'e-48 new asholk nagar hdd ', '2022-02-16 16:48:25'),
-(2, 'ddd', 'ddf', 'df@gmail.com', '9968556', 'e10adc3949ba59abbe56e057f20f883e', 'fgfg', 'fsdf', NULL, '2022-02-16 17:00:20'),
-(3, 'anuj', 'kumar', 'anuj@gmail.com', '9999999999', 'f925916e2754e5e03f75dd58a5733251', 'up', 'noida', NULL, '2022-03-02 15:37:22'),
-(4, 'sssssss', 'sssssss', 'sssssss', 'sssssss', 'f925916e2754e5e03f75dd58a5733251', 'sssssss', 'sssssss', NULL, '2022-03-05 03:27:28'),
-(5, 'Anuj k', 'kumar', 'anuj.doca@Gmail.com', '1234567890', '202cb962ac59075b964b07152d234b70', 'sghsdg', 'sahgsh', NULL, '2022-03-08 17:43:23'),
-(6, 'John', 'Doe', 'john@test.com', '1425635241', 'f925916e2754e5e03f75dd58a5733251', 'Delhi', 'New Delhi', 'ABC Street XYZ Colony', '2022-05-22 02:31:54');
+(1, 'Amir', 'Aziz', 'amir.aziz@example.com', '60123456789', 'f925916e2754e5e03f75dd58a5733251', 'Selangor', 'Shah Alam', 'No. 10, Jalan Anggerik', '2023-01-10 09:15:30'),
+(2, 'Nurul', 'Huda', 'nurul.huda@example.com', '60129876543', '202cb962ac59075b964b07152d234b70', 'Johor', 'Johor Bahru', 'No. 15, Jalan Mawar', '2023-02-12 14:22:18'),
+(3, 'Farid', 'Rashid', 'farid.rashid@example.com', '60138765432', 'e10adc3949ba59abbe56e057f20f883e', 'Penang', 'George Town', 'No. 20, Jalan Dato Keramat', '2023-03-08 11:50:47'),
+(4, 'Aisyah', 'Zain', 'aisyah.zain@example.com', '60147654321', 'f925916e2754e5e03f75dd58a5733251', 'Perak', 'Ipoh', 'No. 25, Jalan Raja Musa', '2023-04-18 16:35:20'),
+(5, 'Zul', 'Rahman', 'zul.rahman@example.com', '60159876543', '202cb962ac59075b964b07152d234b70', 'Kuala Lumpur', 'Kuala Lumpur', 'No. 30, Jalan Tun Razak', '2023-05-22 13:47:52'),
+(6, 'Sara', 'Smith', 'sara.smith@example.com', '1234567891', 'f925916e2754e5e03f75dd58a5733251', 'California', 'Los Angeles', '1234 Sunset Blvd', '2023-01-05 12:34:56'),
+(7, 'Mike', 'Johnson', 'mike.johnson@example.com', '9876543210', '202cb962ac59075b964b07152d234b70', 'Texas', 'Austin', '5678 River Rd', '2023-02-10 09:45:23'),
+(8, 'Emma', 'Williams', 'emma.williams@example.com', '5647382910', 'e10adc3949ba59abbe56e057f20f883e', 'Florida', 'Miami', '9101 Beach Ave', '2023-03-15 14:56:34'),
+(9, 'David', 'Brown', 'david.brown@example.com', '1029384756', 'f925916e2754e5e03f75dd58a5733251', 'New York', 'Brooklyn', '1122 Flatbush Ave', '2023-04-20 08:23:10'),
+(10, 'Olivia', 'Jones', 'olivia.jones@example.com', '7485961320', '202cb962ac59075b964b07152d234b70', 'Ohio', 'Columbus', '3344 Maple Dr', '2023-05-25 15:45:19');
+
+
+
+CREATE TABLE `tblnutritionmeeting` (
+  `id` INT(11) NOT NULL AUTO_INCREMENT,
+  `name` VARCHAR(100) NOT NULL,
+  `gender` VARCHAR(10) NOT NULL,
+  `date` DATE NOT NULL,
+  `specifications` TEXT NOT NULL,
+  `submission_date` TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+
+INSERT INTO `tblnutritionmeeting` (`id`, `name`, `gender`, `date`, `specifications`)
+VALUES 
+(1, 'Alice Johnson', 'Female', '2024-10-30', 'Perform check up'),
+(2, 'Bob Smith', 'Male', '2024-11-01', 'Get advice'),
+(3, 'Charlie Brown', 'Male', '2024-11-02', 'Change plan'),
+(4, 'Diana Prince', 'Female', '2024-11-03', 'Perform check up'),
+(5, 'Eve Adams', 'Female', '2024-11-04', 'Get advice'),
+(6, 'Frank Castle', 'Male', '2024-11-05', 'Change plan'),
+(7, 'Grace Lee', 'Female', '2024-11-06', 'Perform check up');
+
+
+
+CREATE TABLE `body_weight` (
+  `id` INT(11) NOT NULL AUTO_INCREMENT,
+  `user_id` INT(11) NOT NULL,
+  `weight_kg` DECIMAL(5, 2) NOT NULL,
+  `recorded_date` TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+  `notes` VARCHAR(255) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  FOREIGN KEY (`user_id`) REFERENCES `tbluser`(`id`) ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+
+
+INSERT INTO `body_weight` (`id`, `user_id`, `weight_kg`, `recorded_date`, `notes`) VALUES
+(1, 1, 55.00, '2024-01-15 08:30:00', 'Underweight'),
+(2, 2, 68.50, '2024-02-20 09:00:00', 'Normal'),
+(3, 3, 72.00, '2024-03-05 10:00:00', 'Normal'),
+(4, 4, 80.30, '2024-04-10 11:15:00', 'Normal'),
+(5, 5, 65.40, '2024-05-18 14:00:00', 'Normal'),
+(6, 6, 90.00, '2024-06-25 16:45:00', 'Overweight'),
+(7, 7, 105.50, '2024-07-30 12:30:00', 'Overweight'),
+(8, 8, 59.90, '2024-08-12 08:00:00', 'Underweight'),
+(9, 9, 62.00, '2024-09-15 09:30:00', 'Normal'),
+(10, 10, 110.00, '2024-10-01 10:15:00', 'Overweight');
+
+
+
+CREATE TABLE `exercise_routines` (
+  `id` INT(11) NOT NULL AUTO_INCREMENT,
+  `user_id` INT(11) NOT NULL,
+  `exercise_name` VARCHAR(255) NOT NULL,
+  `duration` INT(11) NOT NULL,
+  `date` DATE NOT NULL,
+  PRIMARY KEY (`id`),
+  FOREIGN KEY (`user_id`) REFERENCES `tbluser`(`id`) ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+
+INSERT INTO `exercise_routines` (`id`, `user_id`, `exercise_name`, `duration`, `date`) VALUES
+(1, 1, 'Jogging', 30, '2024-01-15'),
+(2, 2, 'Push-Ups', 15, '2024-02-20'),
+(3, 3, 'Sit-Ups', 20, '2024-03-05'),
+(4, 4, 'Advanced Calisthenics', 45, '2024-04-10'),
+(5, 5, 'Yoga', 60, '2024-05-18');
+
+
+
+
+CREATE TABLE `water_consumption` (
+  `id` INT(11) NOT NULL AUTO_INCREMENT,
+  `amount` INT(11) NOT NULL,
+  `date` DATE NOT NULL,
+  `time` TIME NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+
+INSERT INTO `water_consumption` (`id`, `amount`, `date`, `time`) VALUES
+(1, 500, '2024-01-05', '08:30:00'),
+(2, 750, '2024-01-06', '10:15:00'),
+(3, 300, '2024-01-07', '12:00:00'),
+(4, 600, '2024-01-08', '14:45:00'),
+(5, 400, '2024-01-09', '09:30:00'),
+(6, 800, '2024-01-10', '17:00:00'),
+(7, 350, '2024-01-11', '07:00:00'),
+(8, 900, '2024-01-12', '11:00:00'),
+(9, 550, '2024-01-13', '15:30:00'),
+(10, 1000, '2024-01-14', '18:00:00');
+
+
 
 --
 -- Indexes for dumped tables
@@ -286,6 +372,7 @@ ALTER TABLE `tbluser`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 COMMIT;
 
-/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
-/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
-/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+ALTER TABLE `tbluser` 
+ADD COLUMN `gender` VARCHAR(10) DEFAULT NULL,
+ADD COLUMN `date` DATE DEFAULT NULL,
+ADD COLUMN `specifications` TEXT DEFAULT NULL;
