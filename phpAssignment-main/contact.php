@@ -48,8 +48,8 @@ if(isset($_POST['submit_user_form'])) {
 <head>
     <title>Gym Management System</title>
     <meta charset="UTF-8">
-    <meta name="description" content="Ahana Yoga HTML Template">
-    <meta name="keywords" content="yoga, html">
+    <!-- <meta name="description" content="Ahana Yoga HTML Template">
+    <meta name="keywords" content="yoga, html"> -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Stylesheets -->
     <link rel="stylesheet" href="css/bootstrap.min.css"/>
@@ -107,53 +107,53 @@ if(isset($_POST['submit_user_form'])) {
     </section>
 
     <!--Meet Nutritionist Form-->
-<?php if(strlen($_SESSION['uid'])==0): ?>
-    <!-- If user is not logged in, show a Book Now button that redirects to login -->
-    <section class="user-form-section spad">
-        <div class="container">
-            <h2>Request Meeting With Nutritionist <b>(RM20)</b></h2>
-            <p>Please <a href="login.php" class="site-btn sb-line-gradient">Log in</a> to book a meeting with our nutritionist.</p>
-        </div>
-    </section>
-<?php else: ?>
-    <!-- If user is logged in, show the booking form -->
-    <form method="POST" action="">
-        <section class="user-form-section spad">
-            <div class="container">
-                <h2>Request Meeting With Nutritionist <b>(RM20)</b></h2>
-                <div class="form-group">
-                    <label for="name">Name</label>
-                    <input type="text" id="name" name="name" class="form-control" required>
-                </div>
-                <div class="form-group">
-                    <label for="gender">Gender</label>
-                    <select id="gender" name="gender" class="form-control" required>
-                        <option value="">Select Gender</option>
-                        <option value="Male">Male</option>
-                        <option value="Female">Female</option>
-                        <option value="Other">Other</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label for="date">Date</label>
-                    <input type="date" id="date" name="date" class="form-control" required>
-                </div>
-                <div class="form-group">
-                    <label for="specifications">Specifications</label>
-                    <textarea id="specifications" name="specifications" class="form-control" rows="4" required></textarea>
-                </div>
-                <button class="site-btn sb-line-gradient" type="submit" name="submit_user_form" class="btn btn-primary">Book Now</button>
-            </div>
-        </section>
-    </form>
-<?php endif; ?>
+	<?php if(strlen($_SESSION['uid'])==0): ?>
+		<!-- If user is not logged in, show a Book Now button that redirects to login -->
+		<section class="user-form-section spad">
+			<div class="container">
+				<h2>Request Meeting With Nutritionist <b>(RM20)</b></h2>
+				<p>Please <a href="login.php" class="site-btn sb-line-gradient">Log in</a> to book a meeting with our nutritionist.</p>
+			</div>
+		</section>
+	<?php else: ?>
+		<!-- If user is logged in, show the booking form -->
+		<form method="POST" action="">
+			<section class="user-form-section spad">
+				<div class="container">
+					<h2>Request Meeting With Nutritionist <b>(RM20)</b></h2>
+					<div class="form-group">
+						<label for="name">Name</label>
+						<input type="text" id="name" name="name" class="form-control" required>
+					</div>
+					<div class="form-group">
+						<label for="gender">Gender</label>
+						<select id="gender" name="gender" class="form-control" required>
+							<option value="">Select Gender</option>
+							<option value="Male">Male</option>
+							<option value="Female">Female</option>
+							<option value="Other">Other</option>
+						</select>
+					</div>
+					<div class="form-group">
+						<label for="date">Date</label>
+						<input type="date" id="date" name="date" class="form-control" required>
+					</div>
+					<div class="form-group">
+						<label for="specifications">Specifications</label>
+						<textarea id="specifications" name="specifications" class="form-control" rows="4" required></textarea>
+					</div>
+					<button class="site-btn sb-line-gradient" type="submit" name="submit_user_form" class="btn btn-primary">Book Now</button>
+				</div>
+			</section>
+		</form>
+	<?php endif; ?>
 
 
     <!-- Pricing Section -->
     <section class="pricing-section spad">
         <div class="container">
             <div class="section-title text-center">
-                <h2>About Us</h2>
+                <h2>Contact Us</h2>
             </div>
             <div class="row">
                 <div class="col-lg-12 col-sm-6">
