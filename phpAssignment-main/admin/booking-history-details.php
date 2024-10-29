@@ -103,7 +103,7 @@ on t2.PackageType=t5.id
                     <td><?php echo $result->title; ?></td>
                   </tr>
                   <tr>
-                   <th>Package Duratiobn</th>
+                   <th>Package Duration</th>
                    <td><?php echo $result->PackageDuratiobn; ?></td>
                     <th>Price</th>
                     <td><?php echo $result->Price; ?></td>
