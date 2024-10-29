@@ -97,19 +97,19 @@ $errormsg= "Data not insert successfully";
 
                 <div class="form-group col-md-6">
                   <label class="control-label">Title Name</label>
-                  <input class="form-control" name="titlename" id="titlename" type="text" placeholder="Enter your Title Name">
+                  <input class="form-control" name="titlename" id="titlename" type="text" placeholder="Enter The Package Name">
                 </div>
 
                
 
                  <div class="form-group col-md-6">
                   <label class="control-label">Package Duration</label>
-                  <input class="form-control" type="text" name="packageduratiobn" name="packageduratiobn" placeholder="Enter Package Duratiobn">
+                  <input class="form-control" type="text" name="packageduratiobn" name="packageduratiobn" placeholder="Enter Package Duration">
                 </div>
 
                  <div class="form-group col-md-6">
                   <label class="control-label">Price</label>
-                  <input class="form-control" type="text" name="Price" id="Price" placeholder="Enter your Price">
+                  <input class="form-control" type="text" name="Price" id="Price" placeholder="Enter The Price">
                 </div>
                 
                  <!-- <div class="form-group col-md-6">
