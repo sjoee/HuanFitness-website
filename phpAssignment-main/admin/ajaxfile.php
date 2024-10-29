@@ -1,4 +1,3 @@
-
 <?php
 include  'include/config.php';
 if(!empty($_POST["category"])) 
