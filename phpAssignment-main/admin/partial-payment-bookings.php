@@ -25,8 +25,7 @@ if (strlen($_SESSION['adminid']==0)) {
     <div class="app-sidebar__overlay" data-toggle="sidebar"></div>
     <?php include 'include/sidebar.php'; ?>
     <main class="app-content">
-     
-      
+  
        <div class="row">
         <div class="col-md-12">
           <div class="tile">
