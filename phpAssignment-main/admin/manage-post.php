@@ -37,11 +37,11 @@ if (strlen($_SESSION['adminid']==0)) {
               <table class="table table-hover table-bordered" id="sampleTable">
                 <thead>
                   <tr>
-                    <th>Sr.No</th>
+                    <th>No.</th>
                     <th>Category</th>
                     <th>Package Type</th>
                     <th>Title</th>
-                    <th>Package Duratiobn</th>
+                    <th>Package Duration</th>
                     <th>Price</th>
                     <th>Action</th>
                   </tr>
