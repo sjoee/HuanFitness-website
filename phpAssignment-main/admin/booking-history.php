@@ -37,11 +37,11 @@ if (strlen($_SESSION['adminid']==0)) {
                 <thead>
                   <tr>
                     <th>Sr.No</th>
-        <th>bookingid</th>
+        <th>Booking Id</th>
         <th>Name</th>
         <th>Email</th>
-        <th>bookingdate</th>
-                <th>PackageName</th>
+        <th>Booking Date</th>
+                <th>Package Name</th>
         <th>Title</th>
      
 
