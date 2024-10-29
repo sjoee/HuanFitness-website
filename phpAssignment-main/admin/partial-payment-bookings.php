@@ -86,7 +86,7 @@ on t2.PackageType=t5.id where t1.paymentType='Partial Payment'";
                      </td>
                   </tr>
                     <?php  $cnt=$cnt+1; } } ?>
-              
+          
                 </tbody>
               </table>
             </div>
