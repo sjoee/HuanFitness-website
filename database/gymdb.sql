@@ -10,7 +10,7 @@ CREATE TABLE `tbladdpackage` (
   `category` varchar(45) DEFAULT NULL,
   `titlename` varchar(450) DEFAULT NULL,
   `PackageType` varchar(45) DEFAULT NULL,
-  `PackageDuratiobn` varchar(45) DEFAULT NULL,
+  `PackageDuration` varchar(45) DEFAULT NULL,
   `Price` varchar(45) DEFAULT NULL,
   `uploadphoto` varchar(450) DEFAULT NULL,
   `Description` varchar(450) DEFAULT NULL,
