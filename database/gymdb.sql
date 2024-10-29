@@ -21,10 +21,10 @@ CREATE TABLE `tbladdpackage` (
 -- Dumping data for table `tbladdpackage`
 --
 
-INSERT INTO `tbladdpackage` (`id`, `category`, `titlename`, `PackageType`, `PackageDuratiobn`, `Price`, `uploadphoto`, `Description`, `create_date`) VALUES
+INSERT INTO `tbladdpackage` (`id`, `category`, `titlename`, `PackageType`, `PackageDuration`, `Price`, `uploadphoto`, `Description`, `create_date`) VALUES 
 (1, '1', 'Free Fitness Gear Package', '1', '3 Month', '600', NULL, 'Free Fitness Gear\nComplimentary OnePass', '2022-03-05 02:55:34'),
 (2, '1', '3 Months Membership Package', '1', '6 Month', '800', NULL, 'Book Six Days Different Trainers Class designed for fast Weight Loss / Weight Gain with combination of Latest Workouts in addition to complimentary access to gym area with personal training.', '2022-03-05 02:56:44'),
-(3, '1', 'Nutritionist Counseling', '2', 'Monthly', '10', NULL, 'Hire a personal nutrtitionist<div><br></div><div>Receive feedback on diet and possible exercises</div>', );
+(3, '1', 'Nutritionist Counseling', '2', 'Monthly', '10', NULL, 'Hire a personal nutritionist<div><br></div><div>Receive feedback on diet and possible exercises</div>', '2022-03-05 02:57:00');
 
 -- --------------------------------------------------------
 
