@@ -33,10 +33,9 @@ $query->execute();
 echo "<script>alert('Profile has been updated.');</script>";
 echo "<script> window.location.href =profile.php;</script>";
 
-}
+}?>
 
-
- ?>
+ 
 <!DOCTYPE html>
 <html lang="zxx">
 <head>
@@ -65,21 +64,16 @@ echo "<script> window.location.href =profile.php;</script>";
 	
 	                                                                              
 	<!-- Page top Section -->
-	<section class="page-top-section set-bg" data-setbg="img/page-top-bg.jpg">
-<!-- 		<div class="container">
-			<div class="row">
-				<div class="col-lg-7 m-auto text-white">
-					<h2>Profile</h2>
-				</div>
-			</div>
-		</div> -->
+	<section class="page-top-section set-bg">
 	</section>
 	<!-- Page top Section end -->
 
 	<!-- Contact Section -->
-	<section class="contact-page-section spad overflow-hidden">
+	<section class="pricing-section spad overflow-hidden">
 		<div class="container">
-			
+			<div class="section-title text-center">
+				<h2>PROFILE UPDATE</h2>
+			</div>
 			<div class="row">
 				<div class="col-lg-2">
 				</div>
@@ -121,16 +115,127 @@ echo "<script> window.location.href =profile.php;</script>";
 								<input type="text" name="address" id="address" placeholder="Address" autocomplete="off" value="<?php echo $result->address;?>">
 							</div>
 							<div class="col-md-12">
-						<input type="submit" id="submit" name="submit" value="Update" class="site-btn sb-gradient">
-								
+							<input type="submit" id="submit" name="submit" value="Update" class="site-btn sb-gradient">
 							</div>
 							<?php }} ?>
 						</div>
 					</form>
-				</div>
-				<div class="col-lg-2">
-				</div>
+				</div><br>
+			</div><br><br><br>
+
+			<!-- data history -->
+			<div class="section-title text-center">
+				<h2>DATA HISTORY</h2>
 			</div>
+			<?php
+				$uid = $_SESSION['uid'];
+
+				// Fetch Water Data
+				$sql_water = "SELECT Cdate, water_consumed FROM water_management WHERE uid = :uid ORDER BY Cdate DESC";
+				$query_water = $dbh->prepare($sql_water);
+				$query_water->bindParam(':uid', $uid, PDO::PARAM_STR);
+				$query_water->execute();
+				$results_water = $query_water->fetchAll(PDO::FETCH_OBJ);
+
+				// Fetch Weight Data
+				$sql_weight = "SELECT Wdate, weightKG FROM weight_management WHERE uid = :uid ORDER BY Wdate DESC";
+				$query_weight = $dbh->prepare($sql_weight);
+				$query_weight->bindParam(':uid', $uid, PDO::PARAM_STR);
+				$query_weight->execute();
+				$results_weight = $query_weight->fetchAll(PDO::FETCH_OBJ);
+
+				// Fetch Exercise Data
+				$sql_exercise = "SELECT Edate, exercise_type, duration FROM exercise_management WHERE uid = :uid ORDER BY Edate DESC";
+				$query_exercise = $dbh->prepare($sql_exercise);
+				$query_exercise->bindParam(':uid', $uid, PDO::PARAM_STR);
+				$query_exercise->execute();
+				$results_exercise = $query_exercise->fetchAll(PDO::FETCH_OBJ);
+				?>
+
+				<!-- Water Data Table -->
+				<div class="section-title text-center">
+					<h3>Water Data</h3>
+				</div>
+				<table class="table table-bordered">
+					<thead>
+						<tr>
+							<th>Date</th>
+							<th>Water Consumed (L)</th>
+						</tr>
+					</thead>
+					<tbody>
+						<?php if ($query_water->rowCount() > 0) {
+							foreach ($results_water as $water) { ?>
+								<tr>
+									<td><?php echo htmlentities($water->Cdate); ?></td>
+									<td><?php echo htmlentities($water->water_consumed); ?></td>
+								</tr>
+							<?php }
+						} else { ?>
+							<tr><td colspan="2">No Water Data Available</td></tr>
+						<?php } ?>
+					</tbody>
+				</table>
+
+				<!-- Weight Data Table -->
+				<div class="section-title text-center">
+					<h3>Weight Data</h3>
+				</div>
+				<table class="table table-bordered">
+					<thead>
+						<tr>
+							<th>Date</th>
+							<th>Weight (kg)</th>
+						</tr>
+					</thead>
+					<tbody>
+						<?php if ($query_weight->rowCount() > 0) {
+							foreach ($results_weight as $weight) { ?>
+								<tr>
+									<td><?php echo htmlentities($weight->Wdate); ?></td>
+									<td><?php echo htmlentities($weight->weightKG); ?></td>
+								</tr>
+							<?php }
+						} else { ?>
+							<tr><td colspan="2">No Weight Data Available</td></tr>
+						<?php } ?>
+					</tbody>
+				</table>
+
+				<!-- Exercise Data Table -->
+				<div class="section-title text-center">
+					<h3>Exercise Data</h3>
+				</div>
+				<table class="table table-bordered">
+					<thead>
+						<tr>
+							<th>Date</th>
+							<th>Exercise Type</th>
+							<th>Duration (minutes)</th>
+						</tr>
+					</thead>
+					<tbody>
+						<?php if ($query_exercise->rowCount() > 0) {
+							foreach ($results_exercise as $exercise) { ?>
+								<tr>
+									<td><?php echo htmlentities($exercise->Edate); ?></td>
+									<td><?php echo htmlentities($exercise->exercise_type); ?></td>
+									
+								</tr>
+							<?php }
+						} else { ?>
+							<tr><td colspan="3">No Exercise Data Available</td></tr>
+						<?php } ?>
+					</tbody>
+				</table>
+
+			
+			<!-- data history end -->
+		</div>
+	</section>
+	<section>
+		<div>
+			
 		</div>
 	</section>
 	<!-- Trainers Section end -->
@@ -153,6 +258,7 @@ echo "<script> window.location.href =profile.php;</script>";
 	<script src="js/jquery.magnific-popup.min.js"></script>
 	<script src="js/main.js"></script>
 
+	
 	</body>
 </html>
  <?php } ?>
