@@ -21,7 +21,8 @@
 					<?php if(strlen($_SESSION['uid'])==0): ?>
 						<li><a href="login.php">Login</a></li>
 					<?php else :?>
-						<li><a href="profile.php">My Profile</a></li>
+						<li><a href="profile.php">Profile</a></li>
+						<li><a href="data-management.php">Data Management</a></li>
 						<li><a href="changepassword.php">Change Password</a></li>
 						<li><a href="logout.php">Logout</a></li>
 					<?php endif;?>
