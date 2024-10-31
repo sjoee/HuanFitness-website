@@ -109,7 +109,7 @@ $error ="Registration Not successfully";
 	<!-- Header Section end -->
 	                                                                              
 	<!-- Page top Section -->
-	<section class="page-top-section set-bg" data-setbg="img/page-top-bg.jpg"></section>
+	<section class="page-top-section set-bg"></section>
 	<!-- Page top Section end -->
 
 	<!-- Contact Section -->
