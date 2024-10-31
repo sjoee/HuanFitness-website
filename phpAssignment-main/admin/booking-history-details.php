@@ -16,11 +16,6 @@ else:
 $ParcialPayment=$_POST['ParcialPayment'];
 endif;
 $tpay=$_POST['totalpayment'];
-// if($tpay==''):
-//   $totalpay=$ParcialPayment;
-// else:
-//   $totalpay=$tpay;
-// endif;
 
 $sql="INSERT INTO tblpayment(bookingID,paymentType,payment) Values(:bookindid,:Paymenttype,:ParcialPayment);
 update tblbooking set paymentType=:Paymenttype where id=:bookindid";
