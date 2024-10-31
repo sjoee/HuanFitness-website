@@ -1,6 +1,10 @@
 <?php
-session_start();
 require_once('include/config.php');
+// Check if the session is active
+if (session_status() == PHP_SESSION_NONE) {
+    session_start();
+}
+
 if(isset($_POST['submit_weight_add'])) {
     $uid = $_SESSION['uid'];
     $date = $_POST['Wdate'];
@@ -18,6 +22,50 @@ if(isset($_POST['submit_weight_add'])) {
         echo "<script>alert('Error saving data. Please try again.');</script>";
     }
 }
+
+// Update Weight
+if (isset($_POST['submit_weight_edit'])) {
+    $uid = $_SESSION['uid'];
+    $date = $_POST['Wdate'];
+    $weight = $_POST['weightKG'];
+
+    $sql = "UPDATE weight_management SET weightKG = :weight WHERE uid = :uid AND Wdate = :date";
+    $query = $dbh->prepare($sql);
+    $query->bindParam(':uid', $uid, PDO::PARAM_STR);
+    $query->bindParam(':date', $date, PDO::PARAM_STR);
+    $query->bindParam(':weight', $weight, PDO::PARAM_STR);
+
+    if ($query->execute()) {
+        echo "<script>alert('Weight data updated successfully.');</script>";
+    } else {
+        echo "<script>alert('Error updating data. Please try again.');</script>";
+    }
+}
+
+// Delete Weight
+if (isset($_POST['submit_weight_delete'])) {
+    $uid = $_SESSION['uid'];
+    $date = $_POST['Wdate'];
+
+    $sql = "DELETE FROM weight_management WHERE uid = :uid AND Wdate = :date";
+    $query = $dbh->prepare($sql);
+    $query->bindParam(':uid', $uid, PDO::PARAM_STR);
+    $query->bindParam(':date', $date, PDO::PARAM_STR);
+
+    if ($query->execute()) {
+        echo "<script>alert('Weight data deleted successfully.');</script>";
+    } else {
+        echo "<script>alert('Error deleting data. Please try again.');</script>";
+    }
+}
+
+// Fetching the latest weight data
+$uid = $_SESSION['uid'];
+$sql_weight = "SELECT Wdate, weightKG FROM weight_management WHERE uid = :uid ORDER BY Wdate DESC";
+$query_weight = $dbh->prepare($sql_weight);
+$query_weight->bindParam(':uid', $uid, PDO::PARAM_STR);
+$query_weight->execute();
+$results_weight = $query_weight->fetchAll(PDO::FETCH_OBJ);
 ?>
 
 <!DOCTYPE html>
