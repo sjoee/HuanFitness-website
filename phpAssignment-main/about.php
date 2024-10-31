@@ -26,8 +26,6 @@ echo "<script>window.location.href='booking-history.php'</script>";
 <head>
 	<title>About Us</title>
 	<meta charset="UTF-8">
-	<meta name="description" content="Ahana Yoga HTML Template">
-	<meta name="keywords" content="yoga, html">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<!-- Stylesheets -->
 	<link rel="stylesheet" href="css/bootstrap.min.css"/>
@@ -40,33 +38,14 @@ echo "<script>window.location.href='booking-history.php'</script>";
 
 	<!-- Main Stylesheets -->
 	<link rel="stylesheet" href="css/style.css"/>
-
-	<style>
-
-
-	</style>
 </head>
 <body>
 	<!-- Page Preloder -->
-	
-
 	<!-- Header Section -->
 	<?php include 'include/header.php';?>
-	<!-- Header Section end -->
-
-	
-
-	                                                                              
+	<!-- Header Section end -->                                                                            
 	<!-- Page top Section -->
-	<section class="page-top-section set-bg">
-		<!-- <div class="container">
-			<div class="row">
-				<div class="col-lg-7 m-auto text-white">
-					<h2>About Us</h2>
-				</div>
-			</div>
-		</div> -->
-	</section>
+	<section class="page-top-section set-bg"></section>
 
 
 
@@ -74,7 +53,6 @@ echo "<script>window.location.href='booking-history.php'</script>";
 	<section class="pricing-section spad">
 		<div class="container">
 			<div class="section-title text-center">
-				<!-- <img src="img/icons/logo-icon.png" alt=""> -->
 				<h2>About Us</h2>
 			</div>
 			<div class="row">
@@ -82,7 +60,6 @@ echo "<script>window.location.href='booking-history.php'</script>";
 					<p>HuanFitnessPal is dedicated to helping you achieve your fitness goals. Our state-of-the-art facilities and expert trainers are here to guide you every step of the way.</p>
 				</div>
 			</div><br><br>
-			<!-- q&a -->
 			 <!-- Q&A Section -->
 			<section class="qa-section">
 			<div class="qa-container">
