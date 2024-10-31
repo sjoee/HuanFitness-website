@@ -17,7 +17,6 @@ $query->bindParam(':uid',$uid,PDO::PARAM_STR);
 $query -> execute();
 echo "<script>alert('Package has been booked.');</script>";
 echo "<script>window.location.href='booking-history.php'</script>";
-
 }
 
 ?>
@@ -26,8 +25,6 @@ echo "<script>window.location.href='booking-history.php'</script>";
 <head>
 	<title>Gym Management System</title>
 	<meta charset="UTF-8">
-	<meta name="description" content="Ahana Yoga HTML Template">
-	<meta name="keywords" content="yoga, html">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<!-- Stylesheets -->
 	<link rel="stylesheet" href="css/bootstrap.min.css"/>
@@ -50,27 +47,15 @@ echo "<script>window.location.href='booking-history.php'</script>";
 	<?php include 'include/header.php';?>
 	<!-- Header Section end -->
 
-	
-
 	                                                                              
 	<!-- Page top Section -->
-	<section class="page-top-section set-bg">
-		<!-- <div class="container">
-			<div class="row">
-				<div class="col-lg-7 m-auto text-white">
-					<h2>Pricing</h2>
-				</div>
-			</div>
-		</div> -->
-	</section>
-
+	<section class="page-top-section set-bg"></section>
 
 
 	<!-- Pricing Section -->
 <section class="pricing-section spad">
 		<div class="container">
 			<div class="section-title text-center">
-				<!-- <img src="img/icons/logo-icon.png" alt=""> -->
 				<h2>Pricing plans</h2>
 				<p>Take a look at our selections of packages available!</p>
 			</div>
@@ -102,7 +87,6 @@ echo "<script>window.location.href='booking-history.php'</script>";
 						<?php if(strlen($_SESSION['uid'])==0): ?>
 						<a href="login.php" class="site-btn sb-line-gradient">Booking Now</a>
 						<?php else :?>
-							<!-- <a href="#" class="site-btn sb-line-gradient">Booking Now</a> -->
 							 <form method='post'>
                             <input type='hidden' name='pid' value='<?php echo htmlentities($result->id);?>'>
                           
