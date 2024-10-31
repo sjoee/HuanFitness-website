@@ -1,30 +1,5 @@
 <?php
-session_start();
 require_once('include/config.php');
-// if(strlen($_SESSION["uid"])==0) {   
-//     header('location:login.php');
-// } else {
-//     if(isset($_POST['submit_water_add'])) {
-//         $uid = $_SESSION['uid'];
-//         $date = $_POST['Cdate'];
-//         $water_intake = $_POST['water_intake'];
-//         // Insert data into water consumption table (add your query here)
-//         echo "<script>alert('Water consumption data saved successfully.');</script>";
-//     }
-
-//     if(isset($_POST['submit_water_edit'])) {
-//         $date = $_POST['Cdate'];
-//         $water_intake = $_POST['water_intake'];
-//         // Update data in water consumption table (add your query here)
-//         echo "<script>alert('Water consumption data updated successfully.');</script>";
-//     }
-
-//     if(isset($_POST['submit_water_delete'])) {
-//         $date = $_POST['Cdate'];
-//         // Delete data from water consumption table (add your query here)
-//         echo "<script>alert('Water consumption data deleted successfully.');</script>";
-//     }
-// }
 if(isset($_POST['submit_water_add'])) {
     $uid = $_SESSION['uid'];
     $date = $_POST['Cdate'];
@@ -42,6 +17,51 @@ if(isset($_POST['submit_water_add'])) {
         echo "<script>alert('Error saving data. Please try again.');</script>";
     }
 }
+
+// Update Water Consumption
+if (isset($_POST['submit_water_edit'])) {
+    $uid = $_SESSION['uid'];
+    $date = $_POST['Cdate'];
+    $water_intake = $_POST['water_intake'];
+
+    $sql = "UPDATE water_management SET water_consumed = :water_intake WHERE uid = :uid AND Cdate = :date";
+    $query = $dbh->prepare($sql);
+    $query->bindParam(':uid', $uid, PDO::PARAM_STR);
+    $query->bindParam(':date', $date, PDO::PARAM_STR);
+    $query->bindParam(':water_intake', $water_intake, PDO::PARAM_STR);
+
+    if ($query->execute()) {
+        echo "<script>alert('Water consumption data updated successfully.');</script>";
+    } else {
+        echo "<script>alert('Error updating data. Please try again.');</script>";
+    }
+}
+
+// Delete Water Consumption
+if (isset($_POST['submit_water_delete'])) {
+    $uid = $_SESSION['uid'];
+    $date = $_POST['Cdate'];
+
+    $sql = "DELETE FROM water_management WHERE uid = :uid AND Cdate = :date";
+    $query = $dbh->prepare($sql);
+    $query->bindParam(':uid', $uid, PDO::PARAM_STR);
+    $query->bindParam(':date', $date, PDO::PARAM_STR);
+
+    if ($query->execute()) {
+        echo "<script>alert('Water consumption data deleted successfully.');</script>";
+    } else {
+        echo "<script>alert('Error deleting data. Please try again.');</script>";
+    }
+}
+
+
+// Fetching the latest water consumption data
+$uid = $_SESSION['uid'];
+$sql_water = "SELECT Cdate, water_consumed FROM water_management WHERE uid = :uid ORDER BY Cdate DESC";
+$query_water = $dbh->prepare($sql_water);
+$query_water->bindParam(':uid', $uid, PDO::PARAM_STR);
+$query_water->execute();
+$results_water = $query_water->fetchAll(PDO::FETCH_OBJ);
 ?>
 
 <!DOCTYPE html>
