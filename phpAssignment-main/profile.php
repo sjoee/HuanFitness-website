@@ -1,4 +1,5 @@
-<?php session_start();
+<?php
+session_start();
 error_reporting(0);
 require_once('include/config.php');
 if(strlen( $_SESSION["uid"])==0)
@@ -6,173 +7,160 @@ if(strlen( $_SESSION["uid"])==0)
 header('location:login.php');
 }
 else{
+
+
+if(isset($_POST['submit']))
+{
 $uid=$_SESSION['uid'];
-?>
+$fname=$_POST['fname'];
+$lname=$_POST['lname'];
+$email=$_POST['email'];
+$mobile=$_POST['mobile'];
+$city=$_POST['city'];
+$state=$_POST['state'];
+$address=$_POST['address'];
+$sql="update tbluser set fname=:fname,lname=:lname,mobile=:mobile,city=:city,state=:state,address=:Address where id=:uid";
+$query = $dbh->prepare($sql);
+$query->bindParam(':fname',$fname,PDO::PARAM_STR);
+$query->bindParam(':lname',$lname,PDO::PARAM_STR);
+$query->bindParam(':mobile',$mobile,PDO::PARAM_STR);
+$query->bindParam(':city',$city,PDO::PARAM_STR);
+$query->bindParam(':state',$state,PDO::PARAM_STR);
+$query->bindParam(':Address',$address,PDO::PARAM_STR);
+$query->bindParam(':uid',$uid,PDO::PARAM_STR);
+$query->execute();
+//$msg="<script>toastr.success('Mobile info updated Successfully', {timeOut: 5000})</script>";
+echo "<script>alert('Profile has been updated.');</script>";
+echo "<script> window.location.href =profile.php;</script>";
+
+}?>
+
+ 
 <!DOCTYPE html>
 <html lang="zxx">
 <head>
-  <title>User | Booking History</title>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!-- Stylesheets -->
-  <link rel="stylesheet" href="css/bootstrap.min.css"/>
-  <link rel="stylesheet" href="css/font-awesome.min.css"/>
-  <link rel="stylesheet" href="css/owl.carousel.min.css"/>
-  <link rel="stylesheet" href="css/nice-select.css"/>
-  <link rel="stylesheet" href="css/slicknav.min.css"/>
+	<title>Gym Management System | User Profile</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<!-- Stylesheets -->
+	<link rel="stylesheet" href="css/bootstrap.min.css"/>
+	<link rel="stylesheet" href="css/font-awesome.min.css"/>
+	<link rel="stylesheet" href="css/owl.carousel.min.css"/>
+	<link rel="stylesheet" href="css/nice-select.css"/>
+	<link rel="stylesheet" href="css/slicknav.min.css"/>
 
-  <!-- Main Stylesheets -->
-  <link rel="stylesheet" href="css/style.css"/>
+	<!-- Main Stylesheets -->
+	<link rel="stylesheet" href="css/style.css"/>
 
 </head>
 <body>
-  <!-- Page Preloder -->
-  
+	<!-- Page Preloder -->
+	
 
-  <!-- Header Section -->
-  <?php include 'include/header.php';?>
-  <!-- Header Section end -->
-                                                                                
-  <!-- Page top Section -->
-  <section class="page-top-section set-bg"></section>
-  <!-- Page top Section end -->
+	<!-- Header Section -->
+	<?php include 'include/header.php';?>
+	<!-- Header Section end -->
 
-  <!-- Contact Section -->
-  <section class="contact-page-section spad overflow-hidden">
-    <div class="container text-center">
-    <h2>BOOKING HISTORY</h2><br><br><br>
-      <div class="row">
-        <div class="col-lg-12">
-          <table class="table table-bordered">
-            <thead>
-              <tr>
-                <th>Sr.No</th>
-                <th hidden>bookingid</th>
-                <th hidden>Name</th>
-                <th hidden>email</th>
-                <th>bookingdate</th>
-                <th>title</th>
-                <th>PackageDuration</th>
-                <th>price</th>
-                <th>Description</th>
-                <th>category_name</th>
-                <th>PackageName</th>
-                <th>Action</th>
-              </tr>
-            </thead>
-              <?php
-                $uid=$_SESSION['uid'];
-                /*$sql="select id, product_id, userid, product_title, packages, category, PackageDuratiobn, price, descripation, booking_date from tblbooking where userid=:uid";*/
-                $sql = "SELECT t1.id as bookingid, t3.fname as Name, t3.email as email, t1.booking_date as bookingdate, t2.titlename as title,
-                      t2.PackageDuratiobn as PackageDuratiobn, t2.Price as Price, t2.Description as Description, t4.category_name as category_name,
-                      t5.PackageName as PackageName FROM tblbooking as t1
-                      JOIN tbladdpackage as t2 ON t1.package_id = t2.id
-                      JOIN tbluser as t3 ON t1.userid = t3.id
-                      JOIN tblcategory as t4 ON t2.category = t4.id
-                      JOIN tblpackage as t5 ON t2.PackageType = t5.id
-                      WHERE t1.userid = :uid";
-                      
-                $query= $dbh->prepare($sql);
-                $query->bindParam(':uid',$uid, PDO::PARAM_STR);
-                $query-> execute();
-                $results = $query -> fetchAll(PDO::FETCH_OBJ);
-                $cnt=1;
-                if($query -> rowCount() > 0)
-                {
-                foreach($results as $result)
-                {
-              ?>
-              <tbody>
-                <tr>
-                  <td><?php echo($cnt);?></td>
-                  <td hidden><?php echo htmlentities($result->bookingid);?></td>
-                  <td hidden><?php echo htmlentities($result->Name);?></td>
-                  <td hidden><?php echo htmlentities($result->email);?></td>
-                  <td><?php echo htmlentities($result->bookingdate);?></td>
-                  <td><?php echo htmlentities($result->title);?></td>
-                  <td><?php echo htmlentities($result->PackageDuratiobn);?></td>
-                  <td><?php echo $result->Price;?></td>
-                  <td><?php echo $result->Description;?></td>
-                  <td><?php echo htmlentities($result->category_name);?></td>
-                  <td><?php echo htmlentities($result->PackageName);?></td>
-                  <td><a href="booking-details.php?bookingid=<?php echo htmlentities($result->bookingid);?>"><button class="btn btn-primary" type="button">View</button></td>
-                </tr>
-                  <?php  $cnt=$cnt+1; } } ?>
-              </tbody>
-          </table>
-        </div>
-      </div>
-    </div>
-  </section>
-  <!-- Trainers Section end -->
+	
+	                                                                              
+	<!-- Page top Section -->
+	<section class="page-top-section set-bg">
+	</section>
+	<!-- Page top Section end -->
 
-  <!-- Nutrition Meetings Section -->
-  <section class="contact-page-section spad overflow-hidden">
-        <div class="container text-center">
-            <h2>Submitted Nutrition Meeting Requests</h2><br><br>
-            <table class="table table-bordered">
-                <thead>
-                    <tr>
-                        <th>Sr.No</th>
-                        <th>Name</th>
-                        <th>Gender</th>
-                        <th>Date</th>
-                        <th>Specifications</th>
-                        <th>Submission Date</th>
-                    </tr>
-                </thead>
-                <tbody>
-                <?php 
-                $sql = "SELECT * FROM tblnutritionmeeting ORDER BY submission_date ASC";
-                $query = $dbh->prepare($sql);
-                $query->execute();
-                $results = $query->fetchAll(PDO::FETCH_OBJ);
+	<!-- Contact Section -->
+	<section class="pricing-section spad overflow-hidden">
+		<div class="container">
+			<div class="section-title text-center">
+				<h2>PROFILE UPDATE</h2>
+			</div>
+			<div class="row">
+				<div class="col-lg-2">
+				</div>
+				<div class="col-lg-8">
+					<form class="singup-form contact-form" method="post">
+						<div class="row">
+							<?php 
+							$uid=$_SESSION['uid'];
+							$sql ="SELECT id, fname, lname, email, mobile, password, address,state,city, create_date from tbluser where id=:uid ";
+							$query= $dbh -> prepare($sql);
+							$query->bindParam(':uid',$uid, PDO::PARAM_STR);
+							$query-> execute();
+							$results = $query -> fetchAll(PDO::FETCH_OBJ);
+							$cnt=1;
+							if($query->rowCount() > 0)
+							{
+							foreach($results as $result)
+							{				?>	
+							<div class="col-md-6">
+								<input type="text" name="fname" id="fname" placeholder="First Name" autocomplete="off" value="<?php echo $result->fname;?>">
+							</div>
+							<div class="col-md-6">
+								<input type="text" name="lname" id="lname" placeholder="Last Name" autocomplete="off" value="<?php echo $result->lname;?>">
+							</div>
+							<div class="col-md-6">
+								<input type="text" name="email" id="email" placeholder="Your Email" autocomplete="off" value="<?php echo $result->email;?>" readonly>
+							</div>
+							<div class="col-md-6">
+								<input type="text" name="mobile" id="mobile" placeholder="Mobile Number" autocomplete="off" value="<?php echo $result->mobile;?>">
+							</div>
+							<div class="col-md-6">
+								<input type="text" name="state" id="state" placeholder="State" autocomplete="off" value="<?php echo $result->state;?>">
+							</div>
+							<div class="col-md-6">
+								<input type="text" name="city" id="city" placeholder="City" autocomplete="off" value="<?php echo $result->city;?>">
+							</div>
+							
+							<div class="col-md-12">
+								<input type="text" name="address" id="address" placeholder="Address" autocomplete="off" value="<?php echo $result->address;?>">
+							</div>
+							<div class="col-md-12">
+							<input type="submit" id="submit" name="submit" value="Update" class="site-btn sb-gradient">
+							</div>
+							<?php }} ?>
+						</div>
+					</form>
+				</div><br>
+			</div><br><br><br>
 
-                if ($query->rowCount() > 0) {
-                    foreach ($results as $result) { ?>
-                        <tr>
-                            <td><?php echo htmlentities($result->id); ?></td>
-                            <td><?php echo htmlentities($result->name); ?></td>
-                            <td><?php echo htmlentities($result->gender); ?></td>
-                            <td><?php echo htmlentities($result->date); ?></td>
-                            <td><?php echo htmlentities($result->specifications); ?></td>
-                            <td><?php echo htmlentities($result->submission_date); ?></td>
-                        </tr>
-                <?php 
-                    }
-                } else { ?>
-                    <tr><td colspan="6">No meeting requests found.</td></tr>
-                <?php } ?>
-                </tbody>
-            </table>
-        </div>
-    </section>
-        <!-- Nutrition Meetings Section end -->
+			<!-- data history -->
 
 
-
-  <!-- Footer Section -->
+			
+			<!-- data history end -->
+		</div>
+	</section>
+	<section>
+		<div>
+			
+		</div>
+	</section>
+	<!-- Trainers Section end -->
 <?php include 'include/footer.php'; ?>
-  <!-- Footer Section end -->
-  
-  <div class="back-to-top"><img src="img/icons/up-arrow.png" alt=""></div>
+	<!-- Footer Section end -->
+	
+	<div class="back-to-top"><img src="img/icons/up-arrow.png" alt=""></div>
 
-  <!--====== Javascripts & Jquery ======-->
-  <script src="js/vendor/jquery-3.2.1.min.js"></script>
-  <script src="js/bootstrap.min.js"></script>
-  <script src="js/jquery.slicknav.min.js"></script>
-  <script src="js/owl.carousel.min.js"></script>
-  <script src="js/jquery.nice-select.min.js"></script>
-  <script src="js/jquery-ui.min.js"></script>
-  <script src="js/jquery.magnific-popup.min.js"></script>
-  <script src="js/main.js"></script>
+	<!-- Search model -->
+	
+	<!-- Search model end -->
 
-  </body>
+	<!--====== Javascripts & Jquery ======-->
+	<script src="js/vendor/jquery-3.2.1.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script src="js/jquery.slicknav.min.js"></script>
+	<script src="js/owl.carousel.min.js"></script>
+	<script src="js/jquery.nice-select.min.js"></script>
+	<script src="js/jquery-ui.min.js"></script>
+	<script src="js/jquery.magnific-popup.min.js"></script>
+	<script src="js/main.js"></script>
+
+	
+	</body>
 </html>
- <style>
-  body {
-        background-color: rgba(249, 242, 240, 0.87);
-    }
+ <?php } ?>
+
+  <style>
 .errorWrap {
     padding: 10px;
     margin: 0 0 20px 0;
@@ -189,5 +177,4 @@ $uid=$_SESSION['uid'];
     -webkit-box-shadow: 0 1px 1px 0 rgba(0,0,0,.1);
     box-shadow: 0 1px 1px 0 rgba(0,0,0,.1);
 }
-</style>
- <?php } ?>
+        </style>
