@@ -7,7 +7,7 @@ if(strlen( $_SESSION["uid"])==0)
 header('location:login.php');
 }
 else{
-// Code for change password	
+//change password	
 if(isset($_POST['submit']))
 	{
 $password=md5($_POST['password']);
@@ -38,8 +38,6 @@ $error="Your current password is not valid.";
 <head>
 	<title>Ahana | Yoga HTML Template</title>
 	<meta charset="UTF-8">
-	<meta name="description" content="Ahana Yoga HTML Template">
-	<meta name="keywords" content="yoga, html">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<!-- Stylesheets -->
 	<link rel="stylesheet" href="css/bootstrap.min.css"/>
@@ -93,14 +91,7 @@ return true;
 
 	                                                                              
 	<!-- Page top Section -->
-	<section class="page-top-section set-bg" data-setbg="img/page-top-bg.jpg">
-<!-- 		<div class="container">
-			<div class="row">
-				<div class="col-lg-7 m-auto text-white">
-					<h2>changepassword</h2>
-				</div>
-			</div>
-		</div> -->
+	<section class="page-top-section set-bg">
 	</section>
 
 
