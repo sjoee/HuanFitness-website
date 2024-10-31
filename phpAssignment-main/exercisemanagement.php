@@ -1,6 +1,10 @@
 <?php
-session_start();
 require_once('include/config.php');
+// Check if the session is active
+if (session_status() == PHP_SESSION_NONE) {
+    session_start();
+}
+
 if(isset($_POST['submit_exercise_add'])) {
     $uid = $_SESSION['uid'];
     $date = $_POST['Edate'];
@@ -18,6 +22,49 @@ if(isset($_POST['submit_exercise_add'])) {
         echo "<script>alert('Error saving data. Please try again.');</script>";
     }
 }
+
+// Update Exercise
+if (isset($_POST['submit_exercise_edit'])) {
+    $uid = $_SESSION['uid'];
+    $date = $_POST['Edate'];
+    $exercise = $_POST['exercise'];
+
+    $sql = "UPDATE exercise_management SET exercise_type = :exercise WHERE uid = :uid AND Edate = :date";
+    $query = $dbh->prepare($sql);
+    $query->bindParam(':uid', $uid, PDO::PARAM_STR);
+    $query->bindParam(':date', $date, PDO::PARAM_STR);
+    $query->bindParam(':exercise', $exercise, PDO::PARAM_STR);
+
+    if ($query->execute()) {
+        echo "<script>alert('Exercise data updated successfully.');</script>";
+    } else {
+        echo "<script>alert('Error updating data. Please try again.');</script>";
+    }
+}
+
+// Delete Exercise
+if (isset($_POST['submit_exercise_delete'])) {
+    $uid = $_SESSION['uid'];
+    $date = $_POST['Edate'];
+
+    $sql = "DELETE FROM exercise_management WHERE uid = :uid AND Edate = :date";
+    $query = $dbh->prepare($sql);
+    $query->bindParam(':uid', $uid, PDO::PARAM_STR);
+    $query->bindParam(':date', $date, PDO::PARAM_STR);
+
+    if ($query->execute()) {
+        echo "<script>alert('Exercise data deleted successfully.');</script>";
+    } else {
+        echo "<script>alert('Error deleting data. Please try again.');</script>";
+    }
+}
+
+// Fetching the latest exercise data
+$sql_exercise = "SELECT Edate, exercise_type FROM exercise_management WHERE uid = :uid ORDER BY Edate DESC";
+$query_exercise = $dbh->prepare($sql_exercise);
+$query_exercise->bindParam(':uid', $uid, PDO::PARAM_STR);
+$query_exercise->execute();
+$results_exercise = $query_exercise->fetchAll(PDO::FETCH_OBJ);
 ?>
 
 <!DOCTYPE html>
