@@ -1,5 +1,4 @@
 # webDev
-fitness and gym website 
 
 Huan Fitness Centre was established in 2010 in Klang Valley. The centre offers a variety of services, including physical training and dietary consultation, with the mission of "bringing you to a healthier life for your beautiful future." The centre welcomes the public to sign up as members and participate in fitness classes offered for a monthly fee ranging from RM50 to RM100. Additionally, members can consult with a professional nutritionist at the centre for personalized dietary advice based on their body condition for a fee of RM20 per session.
 Chen Huan, the owner of Huan Fitness Centre, is a supporter of the Sustainable Development Goals (SDGs). She plans to create a web application named "HuanFitnessPal," aligned with SDG 3: Good Health and Well-being. The application will enable members to track their body weight, water consumption, and exercise routines, assisting them in maintaining a healthy lifestyle. As she lacks the expertise to develop the application, she has hired your team to assist in this endeavor.
